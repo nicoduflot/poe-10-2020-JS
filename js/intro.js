@@ -87,6 +87,12 @@ function pinPointUser(lat, lon, macarteid){
     initMap(lat, lon, macarteid);
 }
 
+var eventClickMouse = new MouseEvent('click', {
+    'view': window,
+    'bubbles': true,
+    'cancelable': true
+});
+
 
 loaded(function(){
     console.log("DOM chargé");
@@ -198,20 +204,45 @@ loaded(function(){
     }*/
 
     //check cookie ES6
+    console.log(document.cookie);
     if (document.cookie.split(';').some((item) => item.trim().startsWith('assistUser='))) {
-        console.log('The cookie "assistUser" exists (ES6)')
-        // si  assistUser à true
-        // => span id aideUser avec classe aideUserOn
-        // si  assistUser à false
-        // => span id aideUser avec classe aideUserOff
+        //console.log('The cookie "assistUser" exists (ES6)')
+        if(document.cookie.split(';').some((item) => item.trim().startsWith('assistUser=true'))){
+            $("#aideUserButton").classList.remove("btn-primary");
+            $("#aideUserButton").classList.add("btn-success");
+            $("#aideUserButton").innerText = "Gérer assistance utilisateur";
+        }else{
+            $("#aideUserButton").classList.remove("btn-success");
+            $("#aideUserButton").classList.add("btn-primary");
+            $("#aideUserButton").innerText = "Activer assistance utilisateur";
+        }
     }else{
-        console.log('The cookie "assistUser" do not exists (ES6)')
-        //trigger de la modale
-        $("#aideUserButton").click();
-        //event lisntener sur le OK de la modale
-        // => création du cookie assistUser à true
-        //event listenner sur le POK de la modale
-        // => création du cookie assistUser à false
+        //console.log('The cookie "assistUser" do not exists (ES6)')
+        //$("#aideUserButton").click(); // jquery
+        $("#aideUserButton").dispatchEvent(eventClickMouse);
+        document.cookie = "assistUser=false;domain=domain('http://localhost/poe-10-2020-JS');max-age=60*60";
     }
 
+    $("#saveAssistUser").addEventListener("click", function (){
+        document.cookie = "assistUser=true";
+        $("#aideUserButton").classList.remove("btn-primary");
+        $("#aideUserButton").classList.add("btn-success");
+        $("#aideUserButton").innerText = "Gérer assistance utilisateur";
+        //console.log(document.cookie);
+    });
+
+    $("#dismissAssistUser").addEventListener("click", function(){
+        document.cookie = "assistUser=false";
+        $("#aideUserButton").classList.remove("btn-success");
+        $("#aideUserButton").classList.add("btn-primary");
+        $("#aideUserButton").innerText = "Activer assistance utilisateur";
+    });
+
+    $("#destroyAssistUser").addEventListener("click", function(){
+        document.cookie = "assistUser=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        $("#aideUserButton").classList.remove("btn-success");
+        $("#aideUserButton").classList.add("btn-primary");
+        $("#aideUserButton").innerText = "Activer assistance utilisateur";
+        console.log(document.cookie);
+    });
 });
