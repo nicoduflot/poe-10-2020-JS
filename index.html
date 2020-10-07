@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript vanilla ice v2.0</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/poppers.min.js"></script>
+    <link rel="stylesheet" href="./leaflet/leaflet.css"/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="./leaflet/leaflet.js"></script>
+    <script src="./js/intro.js"></script>
+    <link rel="stylesheet" href="./css/all.css" />
+    <style>
+        #map { height: 400px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="http://www.dawan.fr">Dawan</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+        aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html">Accueil <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <header>
+        <h1>Mon cours Javascript<small> avec un super formateur ;)</small></h1>
+    </header>
+    <main class="container">
+        <h2>Les data attributes</h2>
+        <section class="row">
+            <article id="dataColor" class="col-lg-6">
+                <h1>Exemple avec data-</h1>
+                <p data-color="#ff0000" class="text-justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Voluptas eum ipsam veniam nesciunt libero, repellendus, 
+                    dicta at nihil molestiae nam perferendis harum facilis 
+                    quia fuga necessitatibus modi, vitae quasi minus.
+                </p>
+                <p data-color="#00ff00" class="text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Excepturi nulla, molestiae quas fugit delectus nostrum. 
+                    Animi, quibusdam pariatur debitis ipsam, minima nobis 
+                    rem sapiente, quia minus amet quos totam vitae.
+                </p>
+                <p data-color="#0000ff" class="text-justify">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Dolore molestias vel expedita exercitationem harum quasi 
+                    officiis! Mollitia, odio amet! Modi distinctio, reiciendis 
+                    quos illum minus sapiente ut aspernatur architecto aliquid.
+                </p>
+            </article>
+            <article class="col-lg-6">
+                <h1>P4</h1>
+                <table class="table table-bordered" id="P4">
+                    <thead>
+                        <tr class="text-center">
+                            <th data-col="1"><i class="fas fa-angle-double-down"></i></th>
+                            <th data-col="2"><i class="fas fa-angle-double-down"></i></th>
+                            <th data-col="3"><i class="fas fa-angle-double-down"></i></th>
+                            <th data-col="4"><i class="fas fa-angle-double-down"></i></th>
+                            <th data-col="5"><i class="fas fa-angle-double-down"></i></th>
+                            <th data-col="6"><i class="fas fa-angle-double-down"></i></th>
+                            <th data-col="7"><i class="fas fa-angle-double-down"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-col="1" data-row="1">&nbsp;</td>
+                            <td data-col="2" data-row="1"></td>
+                            <td data-col="3" data-row="1"></td>
+                            <td data-col="4" data-row="1"></td>
+                            <td data-col="5" data-row="1"></td>
+                            <td data-col="6" data-row="1"></td>
+                            <td data-col="7" data-row="1"></td>
+                        </tr>
+                        <tr>
+                            <td data-col="1" data-row="2">&nbsp;</td>
+                            <td data-col="2" data-row="2"></td>
+                            <td data-col="3" data-row="2"></td>
+                            <td data-col="4" data-row="2"></td>
+                            <td data-col="5" data-row="2"></td>
+                            <td data-col="6" data-row="2"></td>
+                            <td data-col="7" data-row="2"></td>
+                        </tr>
+                        <tr>
+                            <td data-col="1" data-row="3">&nbsp;</td>
+                            <td data-col="2" data-row="3"></td>
+                            <td data-col="3" data-row="3"></td>
+                            <td data-col="4" data-row="3"></td>
+                            <td data-col="5" data-row="3"></td>
+                            <td data-col="6" data-row="3"></td>
+                            <td data-col="7" data-row="3"></td>
+                        </tr>
+                        <tr>
+                            <td data-col="1" data-row="4">&nbsp;</td>
+                            <td data-col="2" data-row="4"></td>
+                            <td data-col="3" data-row="4"></td>
+                            <td data-col="4" data-row="4"></td>
+                            <td data-col="5" data-row="4"></td>
+                            <td data-col="6" data-row="4"></td>
+                            <td data-col="7" data-row="4"></td>
+                        </tr>
+                        <tr>
+                            <td data-col="1" data-row="5">&nbsp;</td>
+                            <td data-col="2" data-row="5"></td>
+                            <td data-col="3" data-row="5"></td>
+                            <td data-col="4" data-row="5"></td>
+                            <td data-col="5" data-row="5"></td>
+                            <td data-col="6" data-row="5"></td>
+                            <td data-col="7" data-row="5"></td>
+                        </tr>
+                        <tr>
+                            <td data-col="1" data-row="6">&nbsp;</td>
+                            <td data-col="2" data-row="6"></td>
+                            <td data-col="3" data-row="6"></td>
+                            <td data-col="4" data-row="6"></td>
+                            <td data-col="5" data-row="6"></td>
+                            <td data-col="6" data-row="6"></td>
+                            <td data-col="7" data-row="6"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <!--
+        <section class="row">
+            <article class="col-lg-6">
+                <h1>Le pendu</h1>
+                <textarea id="pendu"></textarea>
+                <input type="text" id="letterProp" />
+                <button id="sendLetter">Proposer</button>
+            </article>
+        </section>
+        -->
+        <section class="row">
+            <article class="col-lg-8 offset-lg-2">
+                <h1>Gestion Email bulk actions</h1>
+                <div id="listeEmails" style="height: 200px; overflow: auto;">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" id="selectAll" /></th>
+                            <th>Sender</th><th>title</th><th>Read</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+        <section class="row">
+            <article class="col-lg-8 offset-lg-2">
+                <h1>Recherche dynamique</h1>
+                <form>
+                    <div class="form-row form-group">
+                        <label for="searchCity" class="col-lg-4">Rechercher</label>
+                        <input type="search" name="searchCity" class="form-control col-lg-6" id="searchCity" />
+                        <button type="button" id="searchCityButton" class="btn btn-secondary col-lg-2">Search</button>
+                    </div>
+                </form>
+                <div id="divSearchResult" style="z-index: 10;"></div>
+            </article>
+        </section>
+        <section class="row">
+            <article class="col-lg-8">
+                <h1>Api target user</h1>
+                <div id="pinPoint">
+                    <div id="map"></div>
+                </div>
+            </article>
+            <article class="col-lg-4">
+                <h1>User list</h1>
+                <div id="listeUsers" style="height: 400px; overflow: auto; border:1px solid crimson">
+                    <table id="listeUsersTable" class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>User Id</th>
+                            <th>User Name</th>
+                            <th>User Username</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+        <section class="row">
+            <article class="col-lg-8 offset-lg-2">
+                <h1>Selection recettes / pays</h1>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,37 @@
+[
+  {
+    "id":"1",
+    "ville":"paris",
+    "codepostal":"75000"
+  },
+  {
+    "id":"2",
+    "ville":"marseille",
+    "codepostal":"13000"
+  },
+  {
+    "id":"3",
+    "ville":"lille",
+    "codepostal":"59000"
+  },
+  {
+    "id":"4",
+    "ville":"metz",
+    "codepostal":"57000"
+  },
+  {
+    "id":"5",
+    "ville":"renne",
+    "codepostal":"35000"
+  },
+  {
+    "id":"6",
+    "ville":"aix en provence",
+    "codepostal":"13080"
+  },
+  {
+    "id":"7",
+    "ville":"marly",
+    "codepostal":"59383"
+  }
+]
