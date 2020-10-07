@@ -187,4 +187,31 @@ loaded(function(){
     });
     // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
     initMap(50.637380, 3.062568, "map");
+
+    // vérification des cookies déjà présent dans le domaine
+    //console.log(document.cookie);
+    //check cookie ES5
+    /*if (document.cookie.split(';').some(function(item) {
+        return item.trim().indexOf('accesAdmin20200727=') == 0
+    })) {
+        console.log('The cookie "accesAdmin20200727" exists (ES5)')
+    }*/
+
+    //check cookie ES6
+    if (document.cookie.split(';').some((item) => item.trim().startsWith('assistUser='))) {
+        console.log('The cookie "assistUser" exists (ES6)')
+        // si  assistUser à true
+        // => span id aideUser avec classe aideUserOn
+        // si  assistUser à false
+        // => span id aideUser avec classe aideUserOff
+    }else{
+        console.log('The cookie "assistUser" do not exists (ES6)')
+        //trigger de la modale
+        $("#aideUserButton").click();
+        //event lisntener sur le OK de la modale
+        // => création du cookie assistUser à true
+        //event listenner sur le POK de la modale
+        // => création du cookie assistUser à false
+    }
+
 });

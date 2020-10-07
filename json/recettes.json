@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "titre": "Osso bucco",
+    "description": "Boeuf et tomate",
+    "etapes": {
+      "titre": "",
+      "description": ""
+    },
+    "ingredients": {
+      "nom": "",
+      "qte": "",
+      "unite": ""
+    }
+  },
+  {
+    "id": 2,
+    "titre": "",
+    "description": "",
+    "etapes": {
+      "titre": "",
+      "description": ""
+    },
+    "ingredients": {
+      "nom": "",
+      "qte": "",
+      "unite": ""
+    }
+  }
+]
